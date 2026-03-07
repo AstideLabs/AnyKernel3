@@ -49,7 +49,8 @@ if [ -f $home/kernels/$os/Image ] && [ -f $home/kernels/$os/dtb ] && [ -f $home/
     mv $home/kernels/$os/dtb $home/dtb;
     mv $home/kernels/$os/dtbo.img $home/dtbo.img;
 else
-    ui_print "  -> There is no kernel for your OS in this zip! Aborting...";
+    ui_print "  -> There is no kernel for $os_string in this zip! Aborting...";
+    ui_print "  -> Please check that you have the correct kernel zip!";
     exit 1;
 fi;
 
