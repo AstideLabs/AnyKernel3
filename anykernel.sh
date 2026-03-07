@@ -37,9 +37,6 @@ no_block_display=1
 ## Select the correct image to flash
 userflavor="$(file_getprop /system/build.prop "ro.build.flavor")";
 case "$userflavor" in
-    aospa_alioth-user) os="aospa"; os_string="Paranoid Android ROM";;
-    aospa_apollo-user) os="aospa"; os_string="Paranoid Android ROM";;
-    aospa_lmi-user) os="aospa"; os_string="Paranoid Android ROM";;
     missi-user) os="miui"; os_string="MIUI ROM";;
     missi_phoneext4_cn-user) os="miui"; os_string="MIUI ROM";;
     missi_phone_cn-user) os="miui"; os_string="MIUI ROM";;
