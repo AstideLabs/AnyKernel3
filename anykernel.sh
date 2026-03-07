@@ -44,10 +44,10 @@ case "$userflavor" in
     *) os="aosp"; os_string="AOSP ROM";;
 esac;
 ui_print "  -> $os_string is detected!";
-if [ -f $home/kernels/$os/Image ] && [ -f $home/kernels/$os/dtb ] && [ -f $home/kernels/$os/dtbo.img ]; then
-    mv $home/kernels/$os/Image $home/Image;
-    mv $home/kernels/$os/dtb $home/dtb;
-    mv $home/kernels/$os/dtbo.img $home/dtbo.img;
+if [ -f $AKHOME/kernels/$os/Image ] && [ -f $AKHOME/kernels/$os/dtb ] && [ -f $AKHOME/kernels/$os/dtbo.img ]; then
+    mv $AKHOME/kernels/$os/Image $AKHOME/Image;
+    mv $AKHOME/kernels/$os/dtb $AKHOME/dtb;
+    mv $AKHOME/kernels/$os/dtbo.img $AKHOME/dtbo.img;
 else
     ui_print "  -> There is no kernel for $os_string in this zip! Aborting...";
     ui_print "  -> Please check that you have the correct kernel zip!";
