@@ -41,6 +41,8 @@ case "$userflavor" in
     missi_phoneext4_cn-user) os="miui"; os_string="MIUI ROM";;
     missi_phone_cn-user) os="miui"; os_string="MIUI ROM";;
     qssi-user) os="miui"; os_string="MIUI ROM";;
+    missi_pad_cn_ext4-user) os="miui"; os_string="MIUI ROM";;
+    missi_pad_cn_erofs-user) os="miui"; os_string="MIUI ROM";;
     *) os="aosp"; os_string="AOSP ROM";;
 esac;
 ui_print "  -> $os_string is detected!";
