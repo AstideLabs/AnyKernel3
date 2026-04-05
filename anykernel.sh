@@ -29,7 +29,7 @@ IS_SLOT_DEVICE=auto;
 RAMDISK_COMPRESSION=auto;
 PATCH_VBMETA_FLAG=auto;
 
-no_block_display=1
+NO_BLOCK_DISPLAY=1
 
 # import functions/variables and setup patching - see for reference (DO NOT REMOVE)
 . tools/ak3-core.sh;
@@ -43,16 +43,18 @@ esac;
 ui_print "  -> $os_string is detected!";
 if [ -f $AKHOME/kernels/$os/Image ] && [ -f $AKHOME/kernels/$os/dtb ] && [ -f $AKHOME/kernels/$os/dtbo.img ]; then
     mv $AKHOME/kernels/$os/Image $AKHOME/Image;
-    mv $AKHOME/kernels/$os/dtb $AKHOME/dtb;
-    mv $AKHOME/kernels/$os/dtbo.img $AKHOME/dtbo.img;
+    #mv $AKHOME/kernels/$os/dtb $AKHOME/dtb; # uncomment this
+    #mv $AKHOME/kernels/$os/dtbo.img $AKHOME/dtbo.img; # uncomment this
 else
     ui_print "  -> There is no kernel for $os_string in this zip! Aborting...";
     ui_print "  -> Please check that you have the correct kernel zip!";
     exit 1;
 fi;
+ui_print "  -> Flashing DTB and DTBO is not recommended by default.";
+ui_print "  -> If you need to flash them, please uncomment the code in the script.";
 
 # boot install
 split_boot;
 flash_boot;
-flash_dtbo;
+#flash_dtbo; # uncomment this
 ## end boot install
