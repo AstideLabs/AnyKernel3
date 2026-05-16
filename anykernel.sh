@@ -43,14 +43,14 @@ esac;
 ui_print "  -> $os_string is detected!";
 if [ -f $AKHOME/kernels/$os/Image ] && [ -f $AKHOME/kernels/$os/dtb ] && [ -f $AKHOME/kernels/$os/dtbo.img ]; then
     mv $AKHOME/kernels/$os/Image $AKHOME/Image;
-    #mv $AKHOME/kernels/$os/dtb $AKHOME/dtb; # uncomment this
+    mv $AKHOME/kernels/$os/dtb $AKHOME/dtb;
     #mv $AKHOME/kernels/$os/dtbo.img $AKHOME/dtbo.img; # uncomment this
 else
     ui_print "  -> There is no kernel for $os_string in this zip! Aborting...";
     ui_print "  -> Please check that you have the correct kernel zip!";
     exit 1;
 fi;
-ui_print "  -> Flashing DTB and DTBO is not recommended by default.";
+ui_print "  -> Flashing DTBO is not recommended by default.";
 ui_print "  -> If you need to flash them, please uncomment the code in the script.";
 
 # boot install
